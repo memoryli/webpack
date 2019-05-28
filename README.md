@@ -30,7 +30,39 @@ loader的执行顺序是从下到上，从右到左
 
 plugin
 html-webpack-plugin 会在打包结束后，自动生成一个html文件，并且会把打包生成的js自动引入html中
+clean-webpack-plugin 清除dist再重新打包
+SourceMap配置
+他是一个映射关系，能映射出源代码的错误位置，不过打包会变慢
+devtool：‘sourceMap’
+inline-source-map 会把.map文件打包到目标js文件中
+cheap-inline-source-map 只告诉第几行，不告诉第几列,性能会提升
+module  不光业务代码的错误，还包括第三方库
+eval 性能最好，但是复杂的业务代码不太好定位
+cheap-module-eval-source-map  devlpoment
+cheap-module-source-map   production
+ WebpackDevServer来提升开发效率
+ 自动打包，自动刷新浏览器
+ devServer：{
+  contentBase: './dist',
+  open: true  //自动打开一个浏览器
+ }
+ Hot Module Replacement 热模块更新
+ HotModuleReplacementPlugin，他是webpack的一个插件,当css的文件发生改变的时候，只会替换css的内容，html内容不会被改变
+devServer：{
+  contentBase: './dist',
+  open: true,  //自动打开一个浏览器
+  hot: true,
+  hotOnly: true
+ }
+plugin：[
+  new webpack.HotModuleReplacementPlugin()
+]
 
+if(module.hot) {
+  module.hot.accept('./number',() => {
+    number()
+  })
+}
 
 
 
