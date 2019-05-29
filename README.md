@@ -71,6 +71,8 @@ Tree Shaking 概念详解 摇树优化
 Develoment 和 Production 模式的区分打包
 
 Webpack 和 Code Splitting 代码分割
+1、同步代码：webpack.common.js中做optimisition的配置即可
+2、异步代码（impoort），无须配置，会自动进行代码分割
 
 
 
