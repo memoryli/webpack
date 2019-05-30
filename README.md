@@ -75,6 +75,28 @@ Webpack 和 Code Splitting 代码分割
 2、异步代码（impoort），无须配置，会自动进行代码分割
 
 
+Library
+output: {
+  library: 'library',
+  libraryTarget: 'umd'
+}
+通过script标签引入，会在打包的js里面增加一个全局变量，可以直接用 Library.default
+libraryTarget 既可以用cdm，又可以用amd
+lodash 
+import _ from 'lodash'
+ _.join([s,d], ' ')
+ externals: ['lodash']，打包的时候不打包lodash
+
+PWA 的打包配置
+需要安装workbox-webpack-plugin
+plugin: [
+  new workbox.GenerateSw({
+    clientsClaim: true,
+    skipWating: true,
+  })
+]
+
+
 
 
 
