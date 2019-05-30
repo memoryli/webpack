@@ -98,6 +98,44 @@ plugin: [
 
 
 
+historyApiFallback
+只在开发环境有效，解决路由的问题
+
+webpack 性能优化
+
+1、跟上技术的迭代（node，npm，yarn）
+2、尽可能少的模块应用loader   exclude: /node_modules/,
+3、尽可能少的使用plugin
+4、resolve参数合理配置
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
