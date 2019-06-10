@@ -1,7 +1,8 @@
 # webpack
 
 webpack的配置文件
-webpack.config.js
+webpack.config.js(默认文件)
+如果默认文件的名字改成webpackconfig.js那么运行的画，npx webpack --config webpackconfig.js
 const path = require('path')
 module.exports = {
   mode: 'production'
